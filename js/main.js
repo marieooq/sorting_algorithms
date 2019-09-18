@@ -34,12 +34,12 @@ function bubbleSort(arrayItem) {
 function showNums() {
   const showNum = document.getElementById("showNum");
   randomArray = fillArray(100);
-  showNum.innerHTML = `<p>${randomArray}</p>`;
+  showNum.textContent = randomArray;
 }
 
 //show sorted numbers on the right area
 function showBubble() {
   const showBubbleSort = document.getElementById("showBubbleSort");
   const result = bubbleSort(randomArray);
-  showBubbleSort.innerHTML = `<p>${result}</p>`;
+  showBubbleSort.textContent = result;
 }

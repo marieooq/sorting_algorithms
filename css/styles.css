@@ -38,4 +38,5 @@
 
 #showNum {
   padding: 30px;
+  word-wrap: break-word;
 }
