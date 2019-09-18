@@ -39,4 +39,11 @@
 #showNum {
   padding: 30px;
   word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+#showBubbleSort {
+  padding: 30px;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
