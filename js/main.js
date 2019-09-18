@@ -1,9 +1,8 @@
-let randomArray = [3, 4, 1, 5, 2];
+let randomArray = [];
 
-// randomArray = fillArray(5);
-// console.log(`randomArray is ${randomArray}`);
-insertionArray(randomArray);
+console.log(`randomArray is ${randomArray}`);
 
+//fill an empty array
 function fillArray(itemCount) {
   let resultArray = [];
   for (let i = 0; i < itemCount; i++) {
@@ -12,29 +11,35 @@ function fillArray(itemCount) {
   return resultArray;
 }
 
-// function insertionArray(randomArray) {
-//   let tempArray = [];
-//   for (let i = 0; i < randomArray.length; i++) {
-//     if (i == 0) {
-//       tempArray.unshift(randomArray[i]);
-//     } else {
-//       for (let j = 0; j < tempArray.length; j++) {
-//         switch (randomArray[i] < tempArray[j]) {
-//           case true:
-//             console.log(
-//               `randomArray: ${randomArray[i]} tempArray: ${tempArray[j]}`
-//             );
-//             tempArray.splice(j, 0, randomArray[i]);
-//             break;
+//sort the array
+function bubbleSort(arrayItem) {
+  let tempArray = arrayItem;
 
-//           case false:
-//             console.log(
-//               `randomArray: ${randomArray[i]} tempArray: ${tempArray[j]}`
-//             );
-//             tempArray.push(randomArray[i]);
-//             break;
-//         }
-//       }
-//     }
-//   }
-// }
+  for (let i = 0; i < tempArray.length; i++) {
+    for (let j = 0; j < tempArray.length; j++) {
+      if (tempArray[j + 1] < tempArray[j]) {
+        let a = tempArray[j + 1];
+        let b = tempArray[j];
+
+        tempArray[j] = a;
+        tempArray[j + 1] = b;
+      }
+    }
+  }
+
+  return tempArray;
+}
+
+//show numbers on the left area
+function showNums() {
+  const showNum = document.getElementById("showNum");
+  randomArray = fillArray(100);
+  showNum.innerHTML = `<p>${randomArray}</p>`;
+}
+
+//show sorted numbers on the right area
+function showBubble() {
+  const showBubbleSort = document.getElementById("showBubbleSort");
+  const result = bubbleSort(randomArray);
+  showBubbleSort.innerHTML = `<p>${result}</p>`;
+}
